@@ -9,15 +9,10 @@ const connect = function() {
   conn.setEncoding('utf8');
 
   conn.on('connect', () => {
-    console.log('Successfully connected to game server✨'),
-    conn.write('Name: VAL'),
-    // setTimeout(() => conn.write('Move: up'), 100)
-    // setTimeout(() => conn.write('Move: up'), 200)
-    // setTimeout(() => conn.write('Move: up'), 300)
-    // setTimeout(() => conn.write('Move: up'), 400)
-    // setInterval(() => conn.write('Move: right'), 100);
-    // setInterval(() => conn.write('Move: up'), 200);
-      conn.write('Move: up')
+    console.log('✨Successfully connected to game server🐍'),
+    conn.write('Name: VAL');
+
+    
   });
   
   conn.on('data', (data) => {
