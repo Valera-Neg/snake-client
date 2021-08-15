@@ -19,6 +19,9 @@ const connect = function() {
   console.log('Server says: ', data);
    });
 
+  conn.on('close', () => {
+    // TODO
+  })
   return conn;
 }
 

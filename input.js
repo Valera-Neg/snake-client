@@ -1,7 +1,4 @@
-//let connection = undefined;
-
 const setupInput = function(conn) { 
-  connection = conn
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
@@ -24,9 +21,6 @@ const handeleUserInput = function(conn){
       conn.write('Move: right'); 
     }
   })
-  
 }
-
-//handeleUserInput(connection)
 
 module.exports = {setupInput};
