@@ -1,3 +1,5 @@
+const { MOVES, isValidKey } = require('./constants')
+
 const setupInput = function(conn) { 
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -11,14 +13,8 @@ const handeleUserInput = function(conn){
   process.stdin.on('data', (key) => {
     if (key === '\u0003') {
       process.exit();
-    } else if ( key === 'w') {
-      conn.write('Move: up');
-    } else if (key === 's') {
-      conn.write('Move: down'); 
-    } else if (key === 'a') {
-      conn.write('Move: left'); 
-    } else if (key === 'd') {
-      conn.write('Move: right'); 
+    } else if (isValidKey(key)) {
+      conn.write(MOVES[key]);
     }
   })
 }
